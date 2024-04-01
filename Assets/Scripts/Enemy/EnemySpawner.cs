@@ -19,23 +19,21 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        while (true)
+        int patternNum = Random.Range(0, 3);
+        switch (patternNum)
         {
-            int patternNum = Random.Range(0, 3);
-            switch (patternNum)
-            {
-                case 0:
-                    StartCoroutine(PatternOne());
-                    break;
-                case 1:
-                    StartCoroutine(PatternTwo());
-                    break;
-                case 2:
-                    StartCoroutine(PatternThree());
-                    break;
-            }
-            
+            case 0:
+                StartCoroutine(PatternOne());
+                break;
+            case 1:
+                StartCoroutine(PatternTwo());
+                break;
+            case 2:
+                StartCoroutine(PatternThree());
+                break;
         }
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(SpawnEnemy());
     }
     IEnumerator PatternOne()
     {

@@ -63,9 +63,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void GotoMainMenu()
+    public void GameExit()
     {
-        SceneManager.LoadScene("GameStart");
-        Time.timeScale = 1;
+       Application.Quit();
     }
 }
