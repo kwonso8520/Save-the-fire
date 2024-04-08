@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        int patternNum = Random.Range(0, 4);
+        int patternNum = Random.Range(0, 3);
         switch (patternNum)
         {
             case 0:
@@ -31,9 +30,6 @@ public class EnemySpawner : MonoBehaviour
                 break;
             case 2:
                 StartCoroutine(PatternThree());
-                break;
-            case 3:
-                StartCoroutine(PatternFour());
                 break;
         }
         yield return new WaitForSeconds(1.5f);
@@ -76,20 +72,6 @@ public class EnemySpawner : MonoBehaviour
             var EnemyObj = EnemyPool.GetObject();
             EnemyObj.GetComponent<Transform>().position = pos;
             EnemyObj.GetComponent<Rigidbody2D>().AddForce((_target.position - EnemyObj.transform.position).normalized * _enemySpeed, ForceMode2D.Impulse);
-        }
-        yield return null;
-    }
-    IEnumerator PatternFour()
-    {
-        int ran = Random.Range(0, 360); //랜덤으로 0~360도
-        float x = Mathf.Cos(ran * Mathf.Deg2Rad) * 4.3f; // 정해진 위치에서 5만큼 떨어진 원형 랜덤 방향으로 생성
-        float y = Mathf.Sin(ran * Mathf.Deg2Rad) * 4.3f; // 정해진 위치에서 5만큼 떨어진 원형 랜덤 방향으로 생성
-        Vector3 pos = transform.position + new Vector3(x, y, 0);
-        for (int i = 0; i < 5; i++)
-        {
-            var EnemyObj = EnemyPool.GetObject();
-            EnemyObj.GetComponent<Transform>().position = pos + new Vector3(i, 0, 0);
-            EnemyObj.GetComponent<Rigidbody2D>().AddForce((transform.up).normalized * _enemySpeed, ForceMode2D.Impulse);
         }
         yield return null;
     }
