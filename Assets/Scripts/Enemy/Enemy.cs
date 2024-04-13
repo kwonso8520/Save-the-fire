@@ -7,9 +7,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float _destroyTime;
     Transform _target;
+    private EnemySpawner enemySpawner;
     // Start is called before the first frame update
+    private void Awake()
+    {
+       enemySpawner= FindAnyObjectByType<EnemySpawner>();
+    }
     void Start()
     {
+        if(!enemySpawner.isOrganization)
         LookatPlayer();
     }
     private void OnEnable()
