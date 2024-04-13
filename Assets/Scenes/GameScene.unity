@@ -700,8 +700,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005100012, y: -0.0069999993, z: 0}
-    m_Extent: {x: 1.0044, y: 0.99950004, z: 0}
+    m_Center: {x: -0.00044998527, y: 0.0046000183, z: 0}
+    m_Extent: {x: 0.99584997, y: 1.0034, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1241,6 +1241,7 @@ GameObject:
   - component: {fileID: 1027601089}
   - component: {fileID: 1027601090}
   - component: {fileID: 1027601091}
+  - component: {fileID: 1027601092}
   m_Layer: 0
   m_Name: fire(Player)
   m_TagString: Player
@@ -1390,6 +1391,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3478261
+--- !u!95 &1027601092
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027601086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0801aa4e877487246aacb673361b3d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1174277774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 3
+  isOrganization: 0
 --- !u!1 &2141934030
 GameObject:
   m_ObjectHideFlags: 0

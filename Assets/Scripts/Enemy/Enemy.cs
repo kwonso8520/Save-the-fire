@@ -15,13 +15,15 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
-        if(!enemySpawner.isOrganization)
-        LookatPlayer();
+        
+        
     }
     private void OnEnable()
     {
         StartCoroutine(EnemyReturn());
         _target = FindAnyObjectByType<PlayerController>().transform;
+        if (!enemySpawner.isOrganization)
+            LookatPlayer();
     }
 
     // Update is called once per frame
