@@ -700,8 +700,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00044998527, y: 0.0046000183, z: 0}
-    m_Extent: {x: 0.99584997, y: 1.0034, z: 0}
+    m_Center: {x: -0.00020000339, y: 0.0016000271, z: 0}
+    m_Extent: {x: 0.9979, y: 0.9946, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1243,7 +1243,7 @@ GameObject:
   - component: {fileID: 1027601091}
   - component: {fileID: 1027601092}
   m_Layer: 0
-  m_Name: fire(Player)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,9 +1388,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
-  m_Radius: 0.3478261
+  m_Radius: 0.15
 --- !u!95 &1027601092
 Animator:
   serializedVersion: 5
@@ -2079,7 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e59a274f38ad324d9555d7e1183972f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolingObjectPrefab: {fileID: 4039972229448421167, guid: 29ec617b9b81ef449a0ac592942f91ac, type: 3}
+  _poolingObjectPrefab: {fileID: 7670680095098644574, guid: 29ec617b9b81ef449a0ac592942f91ac, type: 3}
 --- !u!4 &1873906997
 Transform:
   m_ObjectHideFlags: 0

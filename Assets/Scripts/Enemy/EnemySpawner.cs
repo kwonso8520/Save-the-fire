@@ -52,6 +52,11 @@ public class EnemySpawner : MonoBehaviour
 
         var EnemyObj = EnemyPool.GetObject();
         EnemyObj.GetComponent<Transform>().position = pos;
+        Vector2 direction = _target.position - EnemyObj.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+        EnemyObj.transform.rotation = angleAxis;
+
         EnemyObj.GetComponent<Rigidbody2D>().AddForce((_target.position - EnemyObj.transform.position).normalized * _enemySpeed, ForceMode2D.Impulse);
         yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
     }
@@ -66,6 +71,12 @@ public class EnemySpawner : MonoBehaviour
         {
             var EnemyObj = EnemyPool.GetObject();
             EnemyObj.GetComponent<Transform>().position = pos;
+
+            Vector2 direction = _target.position - EnemyObj.transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+            EnemyObj.transform.rotation = angleAxis;
+
             EnemyObj.GetComponent<Rigidbody2D>().AddForce((_target.position - EnemyObj.transform.position).normalized * _enemySpeed, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);
         }
@@ -79,6 +90,12 @@ public class EnemySpawner : MonoBehaviour
             Vector3 pos = transform.position + new Vector3(x, y, 0);
             var EnemyObj = EnemyPool.GetObject();
             EnemyObj.GetComponent<Transform>().position = pos;
+
+            Vector2 direction = _target.position - EnemyObj.transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+            EnemyObj.transform.rotation = angleAxis;
+
             EnemyObj.GetComponent<Rigidbody2D>().AddForce((_target.position - EnemyObj.transform.position).normalized * _enemySpeed, ForceMode2D.Impulse);
         }
         yield return null;
