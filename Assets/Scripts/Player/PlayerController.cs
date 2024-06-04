@@ -1,3 +1,4 @@
+#define moblie
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,18 +14,22 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.isDead = false;
         _animator = GetComponent<Animator>();
+#if UNITY_ANDROID
+            GameObject.Find("Joystick canvas XYBZ").SetActive(true);
+#elif UNITY_EDITOR || UNITY_STANDALONE
+        GameObject.Find("Joystick canvas XYBZ").SetActive(false);
+#endif
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-
         Vector3 dir = new Vector3(h, v, 0);
         Vector3 moveAmount = dir * _speed * Time.deltaTime;
         Vector3 newPosition = transform.position + moveAmount;
-        if(h > 0)
+        if (h > 0)
         {
             _animator.SetBool("isRight", true);
         }
